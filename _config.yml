@@ -18,8 +18,8 @@ share-links-active:
   linkedin: true
   vk: false
   
-#github:
-#  is_project_page: false
+github:
+  is_project_page: false
   
 # Build settings
 theme: jekyll-theme-tactile
