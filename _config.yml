@@ -1,4 +1,4 @@
-title: [AI Blog]
+title: AI Blog
 name: AI Blog
 # Your name to show in the footer
 author: Mike Huisman
@@ -24,6 +24,4 @@ share-links-active:
 # Build settings
 theme: jekyll-theme-tactile
 plugins:
-  - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap
