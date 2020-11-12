@@ -1,2 +1,11 @@
-theme: jekyll-theme-slate
 title: AI Blog
+email: m.huisman.8@umail.leidenuniv.nl
+description: >- # this means to ignore newlines until "baseurl:"
+  Artificial Intelligence made understandable.   
+baseurl: "/aiblog/" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: MikeHuisman8
+github_username:  mikehuisman
+
+# Build settings
+theme: jekyll-theme-slate
