@@ -6,7 +6,8 @@ baseurl: "/aiblog/" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: MikeHuisman8
 github_username:  mikehuisman
-
+github:
+  is_project_page: false
 # Build settings
 theme: jekyll-theme-slate
 plugins:
