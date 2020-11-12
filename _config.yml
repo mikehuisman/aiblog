@@ -9,3 +9,5 @@ github_username:  mikehuisman
 
 # Build settings
 theme: jekyll-theme-slate
+plugins:
+  - jekyll-feed
