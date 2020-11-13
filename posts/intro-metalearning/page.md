@@ -11,4 +11,4 @@ Due to these limitations, the field of AI has evolved. Instead of explicitly pro
 At this point in time, we are slowly transitioning into the next paradigm of AI. Moving away from writing explicit computer instructions, or programs that learn, we now attempt to write programs that *learn to learn*. In this way, the programs can learn how they should learn properly from less data points and with smaller computational budgets. The field that studies such algorithms is called *meta-learning*.   
 
 
-
+![Image displaying the difference between regular learning and meta-learning. Regular learning is performed on a single dataset, whereas meta-learning often happens across different datasets, because we optimize our learning process, instead of performance on a single task.](MLimage.png)
