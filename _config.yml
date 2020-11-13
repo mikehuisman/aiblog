@@ -25,3 +25,5 @@ github:
 theme: jekyll-theme-tactile
 plugins:
   - jekyll-paginate
+  - jekyll-feed
+  - jekyll-archives
