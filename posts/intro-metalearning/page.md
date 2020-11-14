@@ -14,4 +14,4 @@ In order to understand the difference between meta-learning and regular, or base
 
 ![Image displaying the difference between regular learning and meta-learning. Regular learning is performed on a single dataset, whereas meta-learning often happens across different datasets, because we optimize our learning process, instead of performance on a single task.](MLimage.png)
 
-In this image, every X_i
+In this image, every $X_i$
