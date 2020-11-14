@@ -19,17 +19,24 @@ At this point in time, we are slowly transitioning into the next stage of AI evo
 
 In order to understand the difference between meta-learning and regular, or base-level learning, you have to keep in mind the objectives. In regular learning, we often wish to achieve good performance on a single task. In meta-learning, however, our objective is to find a good learning algorithm that will perform well. When does a learning algorithm perform well? When it can learn various things (tasks) well! Thus, we search this learning algorithm over a set of tasks, instead of a single one, as done in regular learning. This is precisely the difference: the level at which we learn has changed. We went up a layer of abstraction (from base- to meta-level), and deal with a set of tasks. The figure shows the difference in training data used for the different levels of learning. 
 
+<p style="text-align:center;">
 <figure>
     <img src="MLimage.png" width="700"/>
     <figcaption>Image displaying the difference between regular learning and meta-learning. Regular learning is performed on a single dataset, whereas meta-learning often happens across different datasets, because we optimize our learning process, instead of performance on a single task.</figcaption>
 </figure>
+</p>
 
 A specific instantiation of this generic setup, called few-shot learning, is commonly used in today's research on meta-learning. Here, few-shot refers to the fact that only few examples in the train sets of tasks are available to learn from. This is a natural fit for meta-learning, as it is computationally cheap, and good learning performance from few examples indicates good learning ability. 
 
 The most common setup is perhaps *N-way, k-shot* classification, where every train set of a task contains k examples for each of the N classes. Furthermore, the test set contains examples from these N classes, such that we can measure how well our algorithm has learned the N concepts. 
 For sufficiently small k, we can call this approach *few-shot learning*. The figure below shows an example of N-way, k-shot classification, from this [source](https://www.borealisai.com/en/blog/tutorial-2-few-shot-learning-and-meta-learning-i/).
 
-![Image that shows example N-way, k-shot tasks. In every task, the training set consist of k examples for each of the N classes. The test set of a task contains examples selected from the same N classes.](fewshot.jpg)
+<p style="text-align:center;">
+<figure>
+    <img src="fewshot.jpg" width="700"/>
+    <figcaption>Image that shows example N-way, k-shot tasks. In every task, the training set consist of k examples for each of the N classes. The test set of a task contains examples selected from the same N classes.</figcaption>
+</figure>
+</p>
 
 In this blog, we will investigate various algorithms that attempt to exploit the problem setup in order to achieve faster learning in neural networks, something which would greatly increase their applicability in the real world!
 
