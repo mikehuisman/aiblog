@@ -39,5 +39,5 @@ For sufficiently small k, we can call this approach *few-shot learning*. The fig
 </figure>
 </p>
 
-In this blog, we will investigate various algorithms that attempt to exploit the problem setup in order to achieve faster learning in neural networks, something which would greatly increase their applicability in the real world!
+In this blog, we will investigate various algorithms that attempt to exploit this problem setup in order to achieve faster learning in neural networks, something which would greatly increase their applicability in the real world!
 
