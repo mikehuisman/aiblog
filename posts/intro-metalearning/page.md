@@ -1,6 +1,6 @@
 <title>AI Blog</title>
 
-# Introduction to Meta-Learning
+# Introduction to Meta-Learning for Neural Networks
 
 The wish to build *Artificial Intelligence* (AI) dates back hundreds of years ago. With the rise of computers, this wish has become absolute reality, although one could philosophize about when we can call something intelligent. AI researchers are notoriously pessimistic: after solving a difficult problem that seemed to require intelligence, they suddenly seem to change their minds. "I solved this problem! But the algorithm does simply this and that... That is not intelligent!". We are less pessimistic, and argue that any program that produces behavior that would otherwise require human intelligence, can be called an AI, following one of the definitions in [(Russel and Norvig; 2020)](http://aima.cs.berkeley.edu/).
 
@@ -10,6 +10,8 @@ Due to these limitations, the field of AI has evolved. Instead of explicitly pro
 
 At this point in time, we are slowly transitioning into the next stage of AI evolution. Moving away from writing explicit computer instructions, or programs that learn, we now attempt to write programs that *learn to learn*. In this way, the programs can learn how they should learn properly from less data points and with smaller computational budgets. The field that studies such algorithms is called *meta-learning*.   
 
-In order to understand the difference between meta-learning and regular, or base-level learning, you have to keep in mind the objectives. In regular learning, we often wish to achieve good performance on a single task. In meta-learning, however, our objective is to find a good learning algorithm that will perform well across tasks. We search this learning algorithm over a set of tasks, instead of a single one, as done in regular learning. This is precisely the difference: the level at which we learn has changed. We went up a layer of abstraction (from base- to meta-level), and deal with a set of tasks. The figure shows the difference in training data used for the different levels of learning. 
+In order to understand the difference between meta-learning and regular, or base-level learning, you have to keep in mind the objectives. In regular learning, we often wish to achieve good performance on a single task. In meta-learning, however, our objective is to find a good learning algorithm that will perform well. When does a learning algorithm perform well? When it can learn various things (tasks) well! Thus, we search this learning algorithm over a set of tasks, instead of a single one, as done in regular learning. This is precisely the difference: the level at which we learn has changed. We went up a layer of abstraction (from base- to meta-level), and deal with a set of tasks. The figure shows the difference in training data used for the different levels of learning. 
 
 ![Image displaying the difference between regular learning and meta-learning. Regular learning is performed on a single dataset, whereas meta-learning often happens across different datasets, because we optimize our learning process, instead of performance on a single task.](MLimage.png)
+
+In this image, every X_i
