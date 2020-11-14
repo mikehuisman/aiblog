@@ -16,5 +16,7 @@ In order to understand the difference between meta-learning and regular, or base
 
 A specific instantiation of this generic setup, called few-shot learning, is commonly used in today's research on meta-learning. Here, few-shot refers to the fact that only few examples in the train sets of tasks are available to learn from. This is a natural fit for meta-learning, as it is computationally cheap, and good learning performance from few examples indicates good learning ability. 
 
-The most common setup is perhaps *N-way, k-shot* classification, where every train set of a task contains k examples for each of the N classes. For sufficiently small k, we can call this approach *few-shot learning*.
+The most common setup is perhaps *N-way, k-shot* classification, where every train set of a task contains k examples for each of the N classes. Furthermore, the test set contains examples from these N classes, such that we can measure how well our algorithm has learned the N concepts. 
+For sufficiently small k, we can call this approach *few-shot learning*. The figure below shows an example of N-way, k-shot classification, from this [source](https://www.borealisai.com/en/blog/tutorial-2-few-shot-learning-and-meta-learning-i/).
 
+![Image that shows example N-way, k-shot tasks. In every task, the training set consist of k examples for each of the N classes. The test set of a task contains examples selected from the same N classes.](fewshot.png)
