@@ -10,11 +10,12 @@ Due to these limitations, the field of AI has evolved. Instead of explicitly pro
 
 At this point in time, we are slowly transitioning into the next stage of AI evolution. Moving away from writing explicit computer instructions, or programs that learn, we now attempt to write programs that *learn to learn*. In this way, the programs can learn how they should learn properly from less data points and with smaller computational budgets. The field that studies such algorithms is called *meta-learning*. This evolution of AI is summarized in the figure below. 
 
-
+<p style="text-align:center;">
 <figure>
     <img src="evolutionAI.jpg" width="700"/>
     <figcaption>Evolution of AI displayed in a figure. First there was computer programming. Second, we went over to automating tasks by explicitly programming computers. Third, we moved into the field of machine learning, where we program computers to learn tasks. Fourth, which is taking place now, we are moving to autoML techniques, where we program computers to learn how to learn.</figcaption>
 </figure>
+</p>
 
 In order to understand the difference between meta-learning and regular, or base-level learning, you have to keep in mind the objectives. In regular learning, we often wish to achieve good performance on a single task. In meta-learning, however, our objective is to find a good learning algorithm that will perform well. When does a learning algorithm perform well? When it can learn various things (tasks) well! Thus, we search this learning algorithm over a set of tasks, instead of a single one, as done in regular learning. This is precisely the difference: the level at which we learn has changed. We went up a layer of abstraction (from base- to meta-level), and deal with a set of tasks. The figure shows the difference in training data used for the different levels of learning. 
 
