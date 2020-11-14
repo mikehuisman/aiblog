@@ -10,7 +10,7 @@ Looking back, it seems like the field of AI has grown in distinct stages. At the
 
 Due to these limitations, the field of AI has evolved. Instead of explicitly programming computers to do tasks, the idea is to write programs that can learn how to do tasks themselves! In modern times, we do this very successfully, as can be seen by the huge accomplishments that have been achieved due to deep neural networks! Despite these great advances, there are some drawbacks too. That is, neural networks often require lots and lots of data, and large computational resources. 
 
-At this point in time, we are slowly transitioning into the next stage of AI evolution. Moving away from writing explicit computer instructions, or programs that learn, we now attempt to write programs that *learn to learn*. In this way, the programs can learn how they should learn properly from less data points and with smaller computational budgets. The field that studies such algorithms is called *meta-learning*. This evolution of AI is summarized in the figure below. 
+At this point in time, we are slowly transitioning into the next stage of AI evolution. Moving away from writing explicit computer instructions, or programs that learn, we now attempt to write programs that *learn to learn*. In this way, the programs can learn how they should learn properly from less data points and with smaller computational budgets. The field that studies such algorithms is called *meta-learning*. This evolution of AI is summarized in the figure below. Note that meta-learning is a subfield of AutoML.
 
 <p style="text-align:center;">
 <figure>
