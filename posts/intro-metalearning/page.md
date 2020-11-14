@@ -10,7 +10,7 @@ Due to these limitations, the field of AI has evolved. Instead of explicitly pro
 
 At this point in time, we are slowly transitioning into the next stage of AI evolution. Moving away from writing explicit computer instructions, or programs that learn, we now attempt to write programs that *learn to learn*. In this way, the programs can learn how they should learn properly from less data points and with smaller computational budgets. The field that studies such algorithms is called *meta-learning*. This evolution of AI is summarized in the figure below. 
 
-<img src="evolutionAI.jpg" width="200"/>
+<img src="evolutionAI.jpg" width="500"/>
 
 ![Evolution of AI displayed in a figure. First there was computer programming. Second, we went over to automating tasks by explicitly programming computers. Third, we moved into the field of machine learning, where we program computers to learn tasks. Fourth, which is taking place now, we are moving to autoML techniques, where we program computers to learn how to learn.](evolutionAI.jpg) 
 
