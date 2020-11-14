@@ -12,8 +12,7 @@ At this point in time, we are slowly transitioning into the next stage of AI evo
 
 <p style="text-align:center;">
 <figure>
-    <img src="evolutionAI.jpg" width="700"/>
-    <figcaption>Evolution of AI displayed in a figure. First there was computer programming. Second, we went over to automating tasks by explicitly programming computers. Third, we moved into the field of machine learning, where we program computers to learn tasks. Fourth, which is taking place now, we are moving to autoML techniques, where we program computers to learn how to learn.</figcaption>
+    <img src="evolutionAI.jpg" width="700" alt="Evolution of AI displayed in a figure. First there was computer programming. Second, we went over to automating tasks by explicitly programming computers. Third, we moved into the field of machine learning, where we program computers to learn tasks. Fourth, which is taking place now, we are moving to autoML techniques, where we program computers to learn how to learn."/>
 </figure>
 </p>
 
@@ -21,8 +20,7 @@ In order to understand the difference between meta-learning and regular, or base
 
 <p style="text-align:center;">
 <figure>
-    <img src="MLimage.png" width="700"/>
-    <figcaption>Image displaying the difference between regular learning and meta-learning. Regular learning is performed on a single dataset, whereas meta-learning often happens across different datasets, because we optimize our learning process, instead of performance on a single task.</figcaption>
+    <img src="MLimage.png" width="700" alt="Image displaying the difference between regular learning and meta-learning. Regular learning is performed on a single dataset, whereas meta-learning often happens across different datasets, because we optimize our learning process, instead of performance on a single task."/>
 </figure>
 </p>
 
@@ -33,8 +31,7 @@ For sufficiently small k, we can call this approach *few-shot learning*. The fig
 
 <p style="text-align:center;">
 <figure>
-    <img src="fewshot.jpg" width="700"/>
-    <figcaption>Image that shows example N-way, k-shot tasks. In every task, the training set consist of k examples for each of the N classes. The test set of a task contains examples selected from the same N classes.</figcaption>
+    <img src="fewshot.jpg" width="700" alt="Image that shows example N-way, k-shot tasks. In every task, the training set consist of k examples for each of the N classes. The test set of a task contains examples selected from the same N classes."/>
 </figure>
 </p>
 
