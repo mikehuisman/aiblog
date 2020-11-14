@@ -14,4 +14,5 @@ In order to understand the difference between meta-learning and regular, or base
 
 ![Image displaying the difference between regular learning and meta-learning. Regular learning is performed on a single dataset, whereas meta-learning often happens across different datasets, because we optimize our learning process, instead of performance on a single task.](MLimage.png)
 
-In this image, every $X_i$
+A specific instantiation of this generic setup, called few-shot learning, is commonly used in today's research on meta-learning. Here, few-shot refers to the fact that only few examples in the train sets of tasks are available to learn from. This is a natural fit for meta-learning, as it is computationally cheap, and good learning performance from few examples indicates good learning ability. 
+
