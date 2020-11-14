@@ -19,4 +19,7 @@ A specific instantiation of this generic setup, called few-shot learning, is com
 The most common setup is perhaps *N-way, k-shot* classification, where every train set of a task contains k examples for each of the N classes. Furthermore, the test set contains examples from these N classes, such that we can measure how well our algorithm has learned the N concepts. 
 For sufficiently small k, we can call this approach *few-shot learning*. The figure below shows an example of N-way, k-shot classification, from this [source](https://www.borealisai.com/en/blog/tutorial-2-few-shot-learning-and-meta-learning-i/).
 
-![Image that shows example N-way, k-shot tasks. In every task, the training set consist of k examples for each of the N classes. The test set of a task contains examples selected from the same N classes.](fewshot.png)
+![Image that shows example N-way, k-shot tasks. In every task, the training set consist of k examples for each of the N classes. The test set of a task contains examples selected from the same N classes.](fewshot.jpg)
+
+In this blog, we will investigate various algorithms that attempt to exploit the problem setup in order to achieve faster learning in neural networks, something which would greatly increase their applicability in the real world!
+
