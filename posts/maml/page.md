@@ -23,7 +23,7 @@ The key idea of MAML is equivalent to that of the double-loop learning process i
 
 <p style="text-align:center;">
 <figure>
-    <img src="intuition.jpg" width="650" alt="Intuition of having a good initialization."/>
+    <img src="intuition.jpg" width="400" alt="Intuition of having a good initialization."/>
 </figure>
 </p>
 
