@@ -30,3 +30,6 @@ The key idea of MAML is equivalent to that of the double-loop learning process i
 Also note that neural network optimization landscapes are not bowl-shaped. Thus, there may be tons of local minima in which you can get trapped by performing regular gradient descent on the loss function. The initialization parameters of your network thus influence the final point that you will arrive at after learning for some time steps T. Furthermore, the closer your initialization to the right solution, the faster the learning process will be! 
 
 
+## Tasks 
+In order to properly understand MAML, it is crucial to understand what tasks are and how they are composed. MAML was developed for the setting where tasks consist of two parts: a *support set* (train set) and a *query set* (test set). 
+
