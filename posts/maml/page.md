@@ -10,18 +10,23 @@ As mentioned in our [primer](https://mikehuisman.github.io/aiblog/posts/intro-me
 
 <p style="text-align:center;">
 <figure>
-    <img src="doubleloop.jpg" width="700" alt="Visualization of the double-loop learning process. At the outer-level, we try to find some prior that allows for faster learning on an individual lifetime basis."/>
+    <img src="doubleloop.jpg" width="650" alt="Visualization of the double-loop learning process. At the outer-level, we try to find some prior that allows for faster learning on an individual lifetime basis."/>
 </figure>
 </p>
 
 Meta-learning approaches mimic this double-loop learning process. In this blog post, we cover (arguably) the most influential work in the field of deep meta-learning, namely model-agnostic meta-learning, or MAML, created by [Finn et al. (2017)](https://arxiv.org/pdf/1703.03400.pdf). 
 
-## Key idea of MAML
+## Intuition behind MAML
 
 The key idea of MAML is equivalent to that of the double-loop learning process in nature, with the only difference that we assume that the network architecture is fixed. "Well, if the network architecture is fixed then what kind of prior is there to learn?" you may ask. The answer is very simple. We want to find an initialization of the network parameters (weights) from which we can quickly learn new tasks. This idea is captured in the figure below. That is, suppose we have a network with only two parameters: a and b, and 4 tasks that we want to be able to learn quickly (A, B, C, and D). Naturally, we will want our initial weights in a centralized position which allows us to quickly move towards the optimal parameters for the different tasks. In this case, that prior corresponds to the center of the square imposed by the points A, B, C, and D.
 
 
+<p style="text-align:center;">
+<figure>
+    <img src="intuition.jpg" width="650" alt="Intuition of having a good initialization."/>
+</figure>
+</p>
+
+Also note that neural network optimization landscapes are not bowl-shaped. Thus, there may be tons of local minima in which you can get trapped by performing regular gradient descent on the loss function. The initialization parameters of your network thus influence the final point that you will arrive at after learning for some time steps T. Furthermore, the closer your initialization to the right solution, the faster the learning process will be! 
 
 
-
-The intuition behind this is that neural network optimization landscapes is not bowl-shaped. Thus, there may be tons of local minima in which you can get trapped by performing regular gradient descent on the loss function. The initialization parameters of your network thus influence the final point that you will arrive at after learning for some time steps T. Furthermore, the closer your initialization to the right solution, the faster the learning process will be!  
