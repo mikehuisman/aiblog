@@ -75,7 +75,7 @@ Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a prob
 
 
 {% raw %}
-  $$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$ test  $\mathcal{L}_{D_j^{tr}} (\theta_j^{(s)})$$
+  $$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} \mathcal{L}_{D_j^{tr}} (\theta_j^{(s)})$$
 {% endraw %}
 
 
@@ -102,7 +102,7 @@ The pseudocode for MAML is shown in the code block below.
 3.     Sample batch of $J$ tasks $B = \mathcal{T}_j$ for $j=1,...,J$
 4.     For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
 5.         Compute $\theta^{(s)}_j$ using regular gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
-6.     Update the initialization $$
+6.     Update the initialization using:
 {% raw %}
   $$\theta = \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$$
 {% endraw %}
