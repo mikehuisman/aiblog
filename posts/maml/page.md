@@ -38,7 +38,4 @@ In order to properly understand MAML, it is crucial to understand what tasks are
 
 ## Formalizing MAML
 
-<img src="https://latex.codecogs.com/gif.latex?\mathcal{T}_j=\text { Onset event at time bin } t " /> 
-
-$$ \mathcal{T}_t hello$$
-
+Let us denote a task $j$ as $\mathcal{\Tau}_j = (D^{tr}_j, D^{te}_j)$, consisting of a support set $D^{tr}_j$ and query set $D^{te}_j$.
