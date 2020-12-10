@@ -88,7 +88,7 @@ In the first-order variant of MAML, we ignore all previous weight updates that w
 
 <p align="center">
 <figure>
-    <img src="sofo.png" width="450" align="center" alt="Computational graph of task-specific adaptation."/>
+    <center><img src="sofo.png" width="450" align="center" alt="Computational graph of task-specific adaptation."/></center>
 </figure>
 </p>
 
