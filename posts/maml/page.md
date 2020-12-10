@@ -115,9 +115,10 @@ $\theta = \theta - \beta\nabla_{\theta} \sum$
 $\sum \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$
 
 $\mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$
- {% raw %}
+
+{% raw %}
   $\mathcal{L}_{D^{te}_{j}}$
- {% endraw %}
+{% endraw %}
 
 
 $D^{te}_{j}$
