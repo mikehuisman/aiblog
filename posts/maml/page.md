@@ -64,7 +64,7 @@ An example of such a computational graph is shown in the figure below. In this f
 
 <p align="center">
 <figure>
-    <img src="compgraph.png" max-width="250" align="center" alt="Computational graph of task-specific adaptation."/>
+    <img src="compgraph.png" width="250" align="center" alt="Computational graph of task-specific adaptation."/>
 </figure>
 </p>
 
@@ -88,7 +88,7 @@ In the first-order variant of MAML, we ignore all previous weight updates that w
 
 <p align="center">
 <figure>
-    <img src="sofo.png" max-width="450" align="center" alt="Computational graph of task-specific adaptation."/>
+    <img src="sofo.png" width="450" align="center" alt="Computational graph of task-specific adaptation."/>
 </figure>
 </p>
 
@@ -118,7 +118,7 @@ When implementing MAML, there are a few things you need to think about.
 
 ## Some concluding words
 
-MAML is a surprisingly simple, yet effective and general approach to meta-learning. It can be applied to both supervised and reinforcement learning problems. For a long time, people thought that MAML learned to learn quickly. However, recent work has shown that MAML actually learns robust features that can be re-used for various tasks. This has launched new works that attempt to design meta-learning algorithms that actually learn fast. 
+MAML is a surprisingly simple, yet effective and general approach to meta-learning. It can be applied to both supervised and reinforcement learning problems. For a long time, people thought that MAML learned to learn quickly. However, recent work by [Raghu et al. (2020)](https://arxiv.org/pdf/1909.09157.pdf) has shown that MAML actually learns robust features that can be re-used for various tasks. This has launched new works that attempt to design meta-learning algorithms that actually learn fast. 
 
 Hope to see you in my next blog!
 
