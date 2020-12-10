@@ -71,7 +71,9 @@ Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a prob
 
 $\theta \theta \theta \theta \theta \theta \theta \theta$
 
-$\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$$(\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)}))$
+$\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$
+
+$(\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)}))$
 
 $\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}} (\theta_j^{(s)}))$
 
