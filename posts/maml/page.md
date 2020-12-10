@@ -75,7 +75,7 @@ $\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}} (\th
 
 $argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}} (\theta_j^{(s)}))$
 
-\\[ argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)})) \\]
+\[ argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)})) \]
 
 Or in words, the initialization from which we can quickly learn other tasks. 
 See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. The only difference with evolution is that the individuals (neural networks for each task) share the same initialization! 
