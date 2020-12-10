@@ -41,3 +41,7 @@ For sufficiently small k, we can call this approach *few-shot learning*. The fig
 
 In this blog, we will investigate various algorithms that attempt to exploit this problem setup in order to achieve faster learning in neural networks, something which would greatly increase their applicability in the real world!
 
+Hope to see you in the next blog!
+
+[(go back to blog home page)](https://mikehuisman.github.io/aiblog/)
+
