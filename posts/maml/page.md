@@ -36,15 +36,15 @@ The key idea of MAML is equivalent to that of the double-loop learning process i
 <img src="intuition.jpg" width="400" align="center" alt="Intuition of having a good initialization."/>
 </p>
 
-Also note that neural network optimization landscapes are not bowl-shaped. Thus, there may be tons of local minima in which you can get trapped by performing regular gradient descent on the loss function. The initialization parameters of your network thus influence the final point that you will arrive at after learning for some time steps T. Furthermore, the closer your initialization to the right solution, the faster the learning process will be! 
+Also note that neural network optimization landscapes are not bowl-shaped. Thus, there may be tons of local minima in which you can get trapped by performing regular gradient descent on the loss function. The initialization parameters of your network thus influence the final point that you will arrive at after learning for some time steps $s$. Furthermore, the closer your initialization to the right solution, the faster the learning process will be! 
 
 
 ## Tasks 
-In order to properly understand MAML, it is crucial to understand what tasks are and how they are composed. MAML was developed for the setting where tasks consist of two parts: a *support set* and a *query set*. Using this setup, our network can learn new tasks by making some updates on the support set. The success of this inner-level learning can then be measured in the query set. Note that the support and query sets correspond to regular train and test sets of examples (in our case). For more information on the tasks, please refer to our [previous blog post](https://mikehuisman.github.io/aiblog/posts/intro-metalearning/page.html).
+In order to properly understand MAML, it is crucial to understand what tasks are and how they are composed. MAML was developed for the setting where tasks consist of two parts: a *support set* and a *query set*. Using this setup, our network can learn new tasks by making some updates on the support set. The success of this learning process can then be measured in the query set. Note that the support and query sets correspond to regular train and test sets of examples (in our case). For more information on the tasks, please refer to our [previous blog post](https://mikehuisman.github.io/aiblog/posts/intro-metalearning/page.html).
 
 ## Formalizing MAML
 
-Let us denote a task $j$ as $\mathcal{T}_j = (D^{tr}_j, D^{te}_j)$, consisting of a support set $D^{tr}_j$ and query set $D^{te}_j$. Next, suppose we have a fixed base-learner (neural) network with parameters $\theta$. Then, given a new task $\mathcal{T}_j$, our goal is to learn the task as well as possible within $s$ gradient update steps on the support set $D^{tr}_j$. As mentioned earlier, the success of learning on the support set is measured on the query set $D^{te}_j$.
+Let us denote a task $j$ as $\mathcal{T}_j = (D^{tr}_j, D^{te}_j)$, consisting of a support set $D^{tr}_j$ and query set $D^{te}_j$. Next, suppose we have a fixed base-learner (neural) network architecture with trainable parameters $\theta$. Then, given a new task $\mathcal{T}_j$, our goal is to learn the task as well as possible within $s$ gradient update steps on the support set $D^{tr}_j$. As mentioned earlier, the success of learning on the support set is measured on the query set $D^{te}_j$.
 
 Thus, given the task $\mathcal{T}_j$, our network updates its parameters using gradient descent for $s$ steps:
 
@@ -75,12 +75,12 @@ Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a prob
 {% endraw %}
 
 
-Or in words, the initialization from which we can quickly learn other tasks. 
-See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. The only difference with evolution is that the individuals (neural networks for each task) share the same initialization! 
+Or in words, the initialization from which we can quickly learn various tasks. 
+See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and attempt to learn the associated concepts. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn such tasks more quickly. The only difference with evolution is that the individuals (neural networks for each task) share the same initialization! 
 
 Now as you have already seen in the above image (computation graph), we have to propagate backwards through all updates that we have made on individual tasks. This means that we have to compute the gradient of gradients, which requires the computation of second-order derivatives. This can be very expensive in terms of running time and memory cost. Fortunately, [Finn et al. (2017)](https://arxiv.org/pdf/1703.03400.pdf) have shown that a first-order approximation of MAML works just as well! 
 
-In the first-order variant of MAML, we ignore all previous weight updates that we have made for specific tasks, and simply evaluate the gradient of our task-specific parameters $\theta^{(s)}_j$ with respect to the query set, and update our initialization in that direction. The difference between second- and first-order MAML is nicely displayed in the image below, taken from [Rajeswaran et al. (2019)](https://papers.nips.cc/paper/2019/file/072b030ba126b2f4b2374f342be9ed44-Paper.pdf). Note that they use $\psi_j$ to denote fast-weights $\theta^{(s)}_j$
+In the first-order variant of MAML, we ignore all previous weight updates that we have made for specific tasks, and simply evaluate the gradient of our task-specific parameters $\theta^{(s)}_j$ with respect to the query set, and update our initialization in that direction. The difference between second- and first-order MAML is nicely displayed in the image below, taken from [Rajeswaran et al. (2019)](https://papers.nips.cc/paper/2019/file/072b030ba126b2f4b2374f342be9ed44-Paper.pdf). Note that they use $\phi_j$ to denote fast-weights $\theta^{(s)}_j$
 
 <p align="center">
 <center><img src="sofo.png" width="600" align="center" alt="Computational graph of task-specific adaptation."/></center>
@@ -93,10 +93,10 @@ The pseudocode for MAML is shown in the code block below.
 
 1. Randomly initialize weights $\theta$
 2. While stopping criterion not met:
-3.     Sample batch of $J$ tasks $B = \mathcal{T}_j$ for $j=1,...,J$
-4.     For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
-5.         Compute $\theta^{(s)}_j$ using gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
-6.     Update the initialization using:
+3. &nbsp;&nbsp;&nbsp;&nbsp;    Sample batch of $J$ tasks $B = \mathcal{T}_j$ for $j=1,...,J$
+4. &nbsp;&nbsp;&nbsp;&nbsp;    For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
+5. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        Compute $\theta^{(s)}_j$ using gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
+6. &nbsp;&nbsp;&nbsp;&nbsp;    Update the initialization using:
 {% raw %}
   $$\theta = \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$$
 {% endraw %}
