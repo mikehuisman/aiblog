@@ -108,5 +108,5 @@ The pseudocode for MAML is shown in the code block below.
 3.     Sample batch of $J$ tasks $B = \mathcal{T}_j$ for $j=1,...,J$
 4.     For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
 5.         Compute $\theta^{(s)}_j$ using regular gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
-6.     Update the initialization $ \theta := \theta - \beta \nabla_{ \theta } \sum_{ \mathcal{T}_{j} \in B } \mathcal{L}_{ D^{te}_{j} } $ for $ \theta^{(s)}_{j} $
+6.     Update the initialization $ \theta := \theta - \beta \nabla_{ \theta } \sum \mathcal{L}_{ D^{te}_{j} } (\theta^{(s)}_{j}) $
 
