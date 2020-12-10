@@ -65,12 +65,18 @@ Of course, we do not want to restrict ourselves to a single task, for a good lea
 
 Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
 
-$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$
+$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (  \mathcal{L}_{D^{tr}_j}(\theta^{(s)}_j) ).$ 
 
-$\textit{argmin}_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$
-
-$\textit{argmin}_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (  \mathcal{L}_{D^{tr}_j}(\theta^{(s)}_j) ).$
-
+Or in words, the initialization from which we can quickly learn other tasks. 
 See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. The only difference with evolution is that the individuals (neural networks for each task) share the same initialization! 
 
+Now as you have already seen in the above image (computation graph), we have to propagate backwards through all updates that we have made on individual tasks. This means that we have to compute the gradient of gradients, which requires the computation of second-order derivatives. This can be very expensive in terms of running time and memory cost. Fortunately, [Finn et al. (2017)](https://arxiv.org/pdf/1703.03400.pdf) have shown that a first-order approximation of MAML works just as well! 
+
+In the first-order variant of MAML, we ignore all previous weight updates that we have made for specific tasks, and simply evaluate the gradient of our task-specific parameters $\theta^{(s)}_j$ with respect to the query set, and update our initialization in that direction. The difference between second- and first-order MAML is nicely displayed in the image below, taken from [Rajeswaran et al. (2019)](https://papers.nips.cc/paper/2019/file/072b030ba126b2f4b2374f342be9ed44-Paper.pdf). Note that they use $\psi_j$ to denote fast-weights $\theta^{(s)}_j$
+
+<p style="text-align:center;">
+<figure>
+    <img src="sofo.png" max-width="450" align="center" alt="Computational graph of task-specific adaptation."/>
+</figure>
+</p>
 
