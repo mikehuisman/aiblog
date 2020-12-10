@@ -22,11 +22,6 @@ github:
   is_project_page: false
   
 markdown: kramdown
-
-kramdown:
-  input: GFM
-  auto_ids: true
-  syntax_highlighter: rouge
   
 # Build settings
 theme: jekyll-theme-tactile
@@ -34,3 +29,8 @@ plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-archives
+  
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
