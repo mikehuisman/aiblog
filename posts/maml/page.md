@@ -74,15 +74,9 @@ Of course, we do not want to restrict ourselves to a single task, for a good lea
 Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
 
 
-
-$\theta \theta \theta \theta \theta \theta \theta \theta$
-
-$\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$ $(\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)}))$
-
-$\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}} (\theta_j^{(s)}))$
-
-$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$ test  $\mathcal{L}_{D_j^{tr}} (\theta_j^{(s)})$
-
+{% raw %}
+  $$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$ test  $\mathcal{L}_{D_j^{tr}} (\theta_j^{(s)})$$
+{% endraw %}
 
 
 Or in words, the initialization from which we can quickly learn other tasks. 
@@ -108,17 +102,12 @@ The pseudocode for MAML is shown in the code block below.
 3.     Sample batch of $J$ tasks $B = \mathcal{T}_j$ for $j=1,...,J$
 4.     For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
 5.         Compute $\theta^{(s)}_j$ using regular gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
-6.     Update the initialization $\theta = \theta - \beta\nabla_{\theta} \sum \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$
-
-$\theta = \theta - \beta\nabla_{\theta} \sum$
-
-$\sum \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$
-
-$\mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$
-
+6.     Update the initialization $$
 {% raw %}
-  $$\mathcal{L}_{D^{te}_{j}}$$
+  $$\theta = \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$$
 {% endraw %}
 
 
-$D^{te}_{j}$
+
+
+
