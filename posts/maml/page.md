@@ -1,7 +1,9 @@
 <title>AI Blog</title>
-<script type="text/javascript" charset="utf-8" 
-src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML,
-https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script>
+<!--- <script type="text/javascript" charset="utf-8" ---> 
+<!--- src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML, --->
+<!--- https://vincenttam.github.io/javascripts/MathJaxLocal.js"></script> --->
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 # Model-Agnostic Meta-Learning (MAML)
 
