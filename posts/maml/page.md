@@ -42,9 +42,9 @@ Let us denote a task $j$ as $\mathcal{T}_j = (D^{tr}_j, D^{te}_j)$, consisting o
 
 Thus, given the task $\mathcal{T}_j$, our network updates its parameters using gradient descent for $s$ steps:
 
-$\theta_j^(1) := \theta - \alpha \nabla_{\theta} \mathcal{L}_{D^{tr}_j}(\theta),$
+$\theta_j^{(1)} := \theta - \alpha \nabla_{\theta} \mathcal{L}_{D^{tr}_j}(\theta),$
 
-$\theta_j^(2) := \theta^(1) - \alpha \nabla_{\theta^(1)} \mathcal{L}_{D^{tr}_j}(\theta^(1)),$
+$\theta_j^{(2)} := \theta^{(1)} - \alpha \nabla_{\theta^{(1)}} \mathcal{L}_{D^{tr}_j}(\theta^{(1)}),$
 
 $...$
 
