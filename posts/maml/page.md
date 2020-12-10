@@ -46,6 +46,5 @@ $$\theta_j^(2) := \theta^(1) - \alpha \nabla_{\theta^(1)} \mathcal{L}_{D^{tr}_j}
 $$...$$
 $$\theta_j^{(s)} := \theta^{(s-1)} - \alpha \nabla_{\theta^(s-1)} \mathcal{L}_{D^{tr}_j}(\theta^(s-1)).$$
 
-\theta_j^(1) := \theta - \alpha \nabla_{\theta} \mathcal{L}_{D^{tr}_j}(\theta),
 
-Thus, we with to minimize the loss on the query set after making some updates on the support set: $\text{min} \mathcal{L}_{D^{te}_j}(\theta'_j)$, where $\theta'_j$ are the updated parameters from the support set $D^{tr}_j$. That is, $\theta'_j = \theta - \alpha \nabla_{\theta}\mathcal{L} $
+Thus, we with to minimize the loss on the query set after making some updates on the support set: $\text{min} \mathcal{L}_{D^{te}_j}(\theta'_j)$, where $\theta'_j$ are the updated parameters from the support set $D^{tr}_j$. That is, $\theta'_j = \theta - \alpha \nabla_{\theta}\mathcal{L}$
