@@ -101,6 +101,8 @@ The pseudocode for MAML is shown in the code block below.
   $$\theta = \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$$
 {% endraw %}
 
+This algorithm is simple, but very effective and general. If you are interested in some of the experimental results, we encourage you to read the [original paper](https://arxiv.org/pdf/1703.03400.pdf) by Finn et al. (2017)! 
+
 ## Tips for implementation
 
 When implementing MAML, there are a few things you need to think about. 
