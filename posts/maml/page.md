@@ -117,7 +117,7 @@ $\sum \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$
 $\mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$
 
 {% raw %}
-  $\mathcal{L}_{D^{te}_{j}}$
+  $$\mathcal{L}_{D^{te}_{j}}$$
 {% endraw %}
 
 
