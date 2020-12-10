@@ -48,7 +48,10 @@ $\theta_j^{(2)} := \theta^{(1)} - \alpha \nabla_{\theta^{(1)}} \mathcal{L}_{D^{t
 
 $...$
 
-$\theta_j^{(s)} := \theta^{(s-1)} - \alpha \nabla_{\theta^{(s-1)}} \mathcal{L}_{D^{tr}_j}(\theta^{(s-1)}).$
+$\theta_j^{(s)} := \theta^{(s-1)} - \alpha \nabla_{\theta^{(s-1)}} \mathcal{L}_{D^{tr}_j}(\theta^{(s-1)}),$ 
+where $\alpha$ is the learning rate of gradient descent.
+
+
 
 
 If our learning was succesful, then we expect our network to be able to generalize to the query set of the task $D^{te}_j$, which was not used for training. 
