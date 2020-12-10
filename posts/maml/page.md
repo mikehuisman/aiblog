@@ -20,9 +20,7 @@ Despite these amazing achievements, deep neural networks are very limited in the
 As mentioned in our [primer](https://mikehuisman.github.io/aiblog/posts/intro-metalearning/page.md), meta-learning is an approach to do precisely that! Meta-learning is inspired by ideas in evolution where individuals may have been selected for fast learning ability (as they would be able to gain a natural advantage over slower learners). Thus, evolution may have imprinted some *prior* in our brains that allows for fast learning on a life-time basis. Note that learning happens on two different levels: at the *outer-level*, evolution "searches" for a prior that allows for fast learning at the *inner-level* (on a lifetime basis). This double-loop learning process is visualized in the figure below (image from our [youtube video](https://www.youtube.com/watch?v=2Ipb3F4GlL4)). 
 
 <p align="center">
-<figure>
-    <img src="doubleloop.jpg" width="650" alt="Visualization of the double-loop learning process. At the outer-level, we try to find some prior that allows for faster learning on an individual lifetime basis."/>
-</figure>
+<img src="doubleloop.jpg" width="650" alt="Visualization of the double-loop learning process. At the outer-level, we try to find some prior that allows for faster learning on an individual lifetime basis."/>
 </p>
 
 Meta-learning approaches mimic this double-loop learning process. In this blog post, we cover (arguably) the most influential work in the field of deep meta-learning, namely model-agnostic meta-learning, or MAML, created by [Finn et al. (2017)](https://arxiv.org/pdf/1703.03400.pdf). 
@@ -33,9 +31,7 @@ The key idea of MAML is equivalent to that of the double-loop learning process i
 
 
 <p align="center">
-<figure>
-    <img src="intuition.jpg" width="400" align="center" alt="Intuition of having a good initialization."/>
-</figure>
+<img src="intuition.jpg" width="400" align="center" alt="Intuition of having a good initialization."/>
 </p>
 
 Also note that neural network optimization landscapes are not bowl-shaped. Thus, there may be tons of local minima in which you can get trapped by performing regular gradient descent on the loss function. The initialization parameters of your network thus influence the final point that you will arrive at after learning for some time steps T. Furthermore, the closer your initialization to the right solution, the faster the learning process will be! 
@@ -63,9 +59,7 @@ We can then use the loss on the query set $\mathcal{L}_{D^{te}_j}(\theta^{(s)})$
 An example of such a computational graph is shown in the figure below. In this figure, we make $s=3$ updates on a single task. The gray-ish arrows downward indicate task-specific updates using the gradients of the current parameters. The red arrows upward indicate how the gradients with respect to the query set loss bubble up, allowing us to update the initial parameters $\theta$.
 
 <p align="center">
-<figure>
-    <img src="compgraph.png" width="250" align="center" alt="Computational graph of task-specific adaptation."/>
-</figure>
+<img src="compgraph.png" width="250" align="center" alt="Computational graph of task-specific adaptation."/>
 </p>
 
 If our learning was succesful, then we expect our network to be able to generalize to the query set of the task $D^{te}_j$, which was not used for training. 
@@ -87,9 +81,7 @@ Now as you have already seen in the above image (computation graph), we have to 
 In the first-order variant of MAML, we ignore all previous weight updates that we have made for specific tasks, and simply evaluate the gradient of our task-specific parameters $\theta^{(s)}_j$ with respect to the query set, and update our initialization in that direction. The difference between second- and first-order MAML is nicely displayed in the image below, taken from [Rajeswaran et al. (2019)](https://papers.nips.cc/paper/2019/file/072b030ba126b2f4b2374f342be9ed44-Paper.pdf). Note that they use $\psi_j$ to denote fast-weights $\theta^{(s)}_j$
 
 <p align="center">
-<figure>
-    <center><img src="sofo.png" width="450" align="center" alt="Computational graph of task-specific adaptation."/></center>
-</figure>
+<center><img src="sofo.png" width="450" align="center" alt="Computational graph of task-specific adaptation."/></center>
 </p>
 
 ## The algorithm
