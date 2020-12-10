@@ -88,11 +88,11 @@ In the first-order variant of MAML, we ignore all previous weight updates that w
 
 The pseudocode for MAML is shown in the code block below.
 
-```
-Randomly initialize weights $\theta$
-while stopping criterion not met:
-    Sample batch of $J$ tasks $B = \{ \mathcal{T}_j \}_j=1^{J}$
-    For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
-        Compute $\theta^{(s)}_j$ using regular gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
-    Update the initialization $\theta := \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{D^{te}_j}(\theta^{(s)}_j)$
-```
+
+1. Randomly initialize weights $\theta$
+2. While stopping criterion not met:
+3.     Sample batch of $J$ tasks $B = \{ \mathcal{T}_j \}_j=1^{J}$
+4.     For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
+5.         Compute $\theta^{(s)}_j$ using regular gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
+6.     Update the initialization $\theta := \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{D^{te}_j}(\theta^{(s)}_j)$
+
