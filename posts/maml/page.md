@@ -61,6 +61,6 @@ Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a prob
 
 $\text{argmin}_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (  \mathcal{L}_{D^{tr}_j}(\theta^{(s)}_j) ).$
 
-See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. 
+See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. The only difference with evolution is that the individuals (neural networks for each task) share the same initialization! 
 
 test $\backsim$ $\mathbb{E}$
