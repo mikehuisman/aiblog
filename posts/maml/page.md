@@ -1,5 +1,5 @@
 <head>
-<title>AI Blog</title>
+<title><a href="https://mikehuisman.github.io/aiblog/">AI Blog</a></title>
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
