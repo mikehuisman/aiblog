@@ -65,11 +65,11 @@ Of course, we do not want to restrict ourselves to a single task, for a good lea
 
 Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
 
-$(\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)}))$
+
 
 $\theta \theta \theta \theta \theta \theta \theta \theta$
 
-$\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} hello$
+$\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})}$$(\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)}))$
 
 $\mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}} (\theta_j^{(s)}))$
 
