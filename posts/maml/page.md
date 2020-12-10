@@ -56,7 +56,7 @@ where $\alpha$ is the learning rate of gradient descent.
 
 If our learning was succesful, then we expect our network to be able to generalize to the query set of the task $D^{te}_j$, which was not used for training. 
 Of course, we do not want to restrict ourselves to a single task, for a good learning procedure is able to learn many tasks! We can use the loss on the query set $\mathcal{L}_{D^{te}_j}(\theta^{(s)})$ and propagate it backwards through the computational graph to update our initial parameters to facilitate faster learning. 
-An example of such a computational graph is shown in the figure below. 
+An example of such a computational graph is shown in the figure below. In this figure, we make $s=3$ updates on a single task. The gray-ish arrows downward indicate task-specific updates using the gradients of the current parameters. The red arrows upward indicate how the gradients with respect to the query set loss bubble up, allowing us to update the initial parameters $\theta$.
 
 <p style="text-align:center;">
 <figure>
