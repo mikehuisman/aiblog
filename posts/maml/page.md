@@ -55,7 +55,15 @@ where $\alpha$ is the learning rate of gradient descent.
 
 
 If our learning was succesful, then we expect our network to be able to generalize to the query set of the task $D^{te}_j$, which was not used for training. 
-Of course, we do not want to restrict ourselves to a single task, for a good learning procedure is able to learn many tasks! 
+Of course, we do not want to restrict ourselves to a single task, for a good learning procedure is able to learn many tasks! We can use the loss on the query set $\mathcal{L}_{D^{te}_j}(\theta^{(s)})$ and propagate it backwards through the computational graph to update our initial parameters to facilitate faster learning. 
+An example of such a computational graph is shown in the figure below. 
+
+<p style="text-align:center;">
+<figure>
+    <img src="compgraph.png" max-width="250" align="center" alt="Computational graph of task-specific adaptation."/>
+</figure>
+</p>
+
 
 Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
 
