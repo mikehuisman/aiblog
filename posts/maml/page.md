@@ -84,3 +84,11 @@ In the first-order variant of MAML, we ignore all previous weight updates that w
 </figure>
 </p>
 
+## The algorithm
+
+The pseudocode for MAML is shown in the code block below.
+
+```
+test
+hello
+```
