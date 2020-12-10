@@ -41,6 +41,11 @@ In order to properly understand MAML, it is crucial to understand what tasks are
 Let us denote a task $j$ as $\mathcal{T}_j = (D^{tr}_j, D^{te}_j)$, consisting of a support set $D^{tr}_j$ and query set $D^{te}_j$. Next, suppose we have a fixed base-learner (neural) network with parameters $\theta$. Then, given a new task $\mathcal{T}_j$, our goal is to learn the task as well as possible within $s$ gradient update steps on the support set $D^{tr}_j$. As mentioned earlier, the success of learning on the support set is measured on the query set $D^{te}_j$.
 
 Thus, given the task $\mathcal{T}_j$, our network updates its parameters using gradient descent for $s$ steps:
-$$\theta_j^(1) := \theta - \alpha \nabla_{\theta} \mathcal{L}_{D^{tr}_j}(\theta), \\ $$
+$$\theta_j^(1) := \theta - \alpha \nabla_{\theta} \mathcal{L}_{D^{tr}_j}(\theta),$$
+$$\theta_j^(2) := \theta^(1) - \alpha \nabla_{\theta^(1)} \mathcal{L}_{D^{tr}_j}(\theta^(1)),$$
+$$...$$
+$$\theta_j^{(s)} := \theta^{(s-1)} - \alpha \nabla_{\theta^(s-1)} \mathcal{L}_{D^{tr}_j}(\theta^(s-1)).$$
+
+\theta_j^(1) := \theta - \alpha \nabla_{\theta} \mathcal{L}_{D^{tr}_j}(\theta),
 
 Thus, we with to minimize the loss on the query set after making some updates on the support set: $\text{min} \mathcal{L}_{D^{te}_j}(\theta'_j)$, where $\theta'_j$ are the updated parameters from the support set $D^{tr}_j$. That is, $\theta'_j = \theta - \alpha \nabla_{\theta}\mathcal{L} $
