@@ -21,6 +21,13 @@ share-links-active:
 github:
   is_project_page: false
   
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  
 # Build settings
 theme: jekyll-theme-tactile
 plugins:
