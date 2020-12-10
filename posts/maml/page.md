@@ -81,7 +81,7 @@ Now as you have already seen in the above image (computation graph), we have to 
 In the first-order variant of MAML, we ignore all previous weight updates that we have made for specific tasks, and simply evaluate the gradient of our task-specific parameters $\theta^{(s)}_j$ with respect to the query set, and update our initialization in that direction. The difference between second- and first-order MAML is nicely displayed in the image below, taken from [Rajeswaran et al. (2019)](https://papers.nips.cc/paper/2019/file/072b030ba126b2f4b2374f342be9ed44-Paper.pdf). Note that they use $\psi_j$ to denote fast-weights $\theta^{(s)}_j$
 
 <p align="center">
-<center><img src="sofo.png" width="450" align="center" alt="Computational graph of task-specific adaptation."/></center>
+<center><img src="sofo.png" width="600" align="center" alt="Computational graph of task-specific adaptation."/></center>
 </p>
 
 ## The algorithm
