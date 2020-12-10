@@ -65,7 +65,9 @@ Of course, we do not want to restrict ourselves to a single task, for a good lea
 
 Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
 
-$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (  \mathcal{L}_{D^{tr}_j}(\theta^{(s)}_j) ).$ 
+$(\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)}))$
+
+$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} (\mathcal{L}_{D_j^{tr}}(\theta_j^{(s)}))$ 
 
 Or in words, the initialization from which we can quickly learn other tasks. 
 See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. The only difference with evolution is that the individuals (neural networks for each task) share the same initialization! 
