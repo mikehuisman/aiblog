@@ -13,6 +13,8 @@
 </head>
 # Model-Agnostic Meta-Learning (MAML)
 
+In this blog post, we cover arguably the most influential work in the modern field of deep meta-learning, namely model-agnostic meta-learning (MAML) created by [Finn et al. (2017)](https://arxiv.org/pdf/1703.03400.pdf).
+
 ## Motivation 
 Deep neural networks have been shown to be extremely successful, yielding human- or even super-human level performance on various tasks ranging from image recognition to playing games (chess, go, ...).
 Despite these amazing achievements, deep neural networks are very limited in their ability in to learn new tasks quickly (from little data). This makes them inapplicable in many real-world domains where little data and computational resources are available [(Hospedales et al. (2020))](https://arxiv.org/pdf/2004.05439.pdf). Naturally, this raises the question how we can enable these networks to learn *quickly* (from less data).
@@ -113,6 +115,7 @@ When implementing MAML, there are a few things you need to think about.
 MAML is a surprisingly simple, yet effective and general approach to meta-learning. It can be applied to both supervised and reinforcement learning problems. For a long time, people thought that MAML learned to learn quickly. However, recent work by [Raghu et al. (2020)](https://arxiv.org/pdf/1909.09157.pdf) has shown that MAML actually learns robust features that can be re-used for various tasks. This has launched new works that attempt to design meta-learning algorithms that actually learn fast. 
 
 Hope to see you in my next blog!
+Can't wait till the next one? Go and check out [the survey](https://arxiv.org/pdf/2010.03522.pdf) that I wrote together with Jan N. van Rijn and Aske Plaat. 
 
 
 
