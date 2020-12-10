@@ -1,5 +1,5 @@
 <head>
-<title><a href="https://mikehuisman.github.io/aiblog/">AI Blog</a></title>
+<title>AI Blog</title>
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "all" } } }); </script>
 <script type="text/x-mathjax-config">
  MathJax.Hub.Config({
@@ -118,5 +118,5 @@ MAML is a surprisingly simple, yet effective and general approach to meta-learni
 
 Hope to see you in my next blog!
 
-
+[(go back to blog home page)](https://mikehuisman.github.io/aiblog/)
 
