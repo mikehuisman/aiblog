@@ -71,11 +71,11 @@ An example of such a computational graph is shown in the figure below. In this f
 If our learning was succesful, then we expect our network to be able to generalize to the query set of the task $D^{te}_j$, which was not used for training. 
 Of course, we do not want to restrict ourselves to a single task, for a good learning procedure is able to learn many tasks! 
 
-Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
+Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability (measured on the unseen data in the query set) by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
 
 
 {% raw %}
-  $$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} \mathcal{L}_{D_j^{tr}} (\theta_j^{(s)})$$
+  $$argmin_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\mathcal{T})} \mathcal{L}_{D_j^{te}} (\theta_j^{(s)})$$
 {% endraw %}
 
 
@@ -107,7 +107,13 @@ The pseudocode for MAML is shown in the code block below.
   $$\theta = \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$$
 {% endraw %}
 
+## Tips for implementation
 
+When implementing MAML, there are a few things you need to think about. 
+
+- Make sure that the autodifferentiation mechanism of the library of your choice (e.g., Tensorflow or PyTorch) detects all your tensor operations and adds them to the computation graph. In my experience, this does not work well with high-level features such as provided by Keras. Instead, you want to implement manual feed-forward pass functions in which you can pass all tensors as argument. 
+- If you want to implement second-order MAML, make sure that the gradients are incorporated into the computation graph. In PyTorch, this can be done by setting create_graph=True when calling loss.backward()
+- For image classification tasks, the base-learner network often has Batch Normalization layers. Make sure to set the momentum value to 1 so that the transformations are based only on the current batch of data. Furthermore, you need to ensure that it does not maintain running statistics (e.g., by setting running_mean=0 and running_var=1) at every forward pass involving a batch norm layer 
 
 
 
