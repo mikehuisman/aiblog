@@ -48,7 +48,14 @@ $\theta_j^{(2)} := \theta^{(1)} - \alpha \nabla_{\theta^{(1)}} \mathcal{L}_{D^{t
 
 $...$
 
-$\theta_j^{(s)} := \theta^{(s-1)} - \alpha \nabla_{\theta^(s-1)} \mathcal{L}_{D^{tr}_j}(\theta^(s-1)).$
+$\theta_j^{(s)} := \theta^{(s-1)} - \alpha \nabla_{\theta^{(s-1)}} \mathcal{L}_{D^{tr}_j}(\theta^{(s-1)}).$
 
 
-Thus, we with to minimize the loss on the query set after making some updates on the support set: $\text{min} \mathcal{L}_{D^{te}_j}(\theta'_j)$, where $\theta'_j$ are the updated parameters from the support set $D^{tr}_j$. That is, $\theta'_j = \theta - \alpha \nabla_{\theta}\mathcal{L}$
+If our learning was succesful, then we expect our network to be able to generalize to the query set of the task $D^{te}_j$, which was not used for training. 
+Of course, we do not want to restrict ourselves to a single task, for a good learning procedure is able to learn many tasks! 
+
+Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
+
+$\text{argmin}_{\theta} \mathbb{E}_{\mathcal{T}_j \backsim p(\Tau)} \left[  \mathcal{L}_{D^{tr}_j}(\theta^{(s)}_j) \right].$
+
+See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. 
