@@ -56,7 +56,7 @@ Of course, we do not want to restrict ourselves to a single task, for a good lea
 
 Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a probability to invidual tasks $\mathcal{T}_j$. Then, we wish to maximize our learning ability by adapting our initial set of parameters $\theta$. This is precisely the objective function of MAML! More mathematically precise, we wish to find
 
-$\text{argmin}_{\theta} \mathbb{E}_{\mathcal{T}_j ... p(\Tau)} [  \mathcal{L}_{D^{tr}_j}(\theta^{(s)}_j) ].$
+$\text{argmin}_{\theta} \E_{\mathcal{T}_j ... p(\Tau)} [  \mathcal{L}_{D^{tr}_j}(\theta^{(s)}_j) ].$
 
 See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and make some updates. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn various tasks more quickly. 
 
