@@ -101,7 +101,7 @@ The pseudocode for MAML is shown in the code block below.
 2. While stopping criterion not met:
 3.     Sample batch of $J$ tasks $B = \mathcal{T}_j$ for $j=1,...,J$
 4.     For every task $\mathcal{T}_j = (D^{tr}_j, D^{te}_j) \in B$:
-5.         Compute $\theta^{(s)}_j$ using regular gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
+5.         Compute $\theta^{(s)}_j$ using gradient descent on the support set $D^{tr}_j$ with learning rate $\alpha$
 6.     Update the initialization using:
 {% raw %}
   $$\theta = \theta - \beta \nabla_{\theta} \sum_{\mathcal{T}_j \in B} \mathcal{L}_{ D^{te}_{j}}(\theta^{(s)}_{j})$$
@@ -114,6 +114,13 @@ When implementing MAML, there are a few things you need to think about.
 - Make sure that the autodifferentiation mechanism of the library of your choice (e.g., Tensorflow or PyTorch) detects all your tensor operations and adds them to the computation graph. In my experience, this does not work well with high-level features such as provided by Keras. Instead, you want to implement manual feed-forward pass functions in which you can pass all tensors as argument. 
 - If you want to implement second-order MAML, make sure that the gradients are incorporated into the computation graph. In PyTorch, this can be done by setting create_graph=True when calling loss.backward()
 - For image classification tasks, the base-learner network often has Batch Normalization layers. Make sure to set the momentum value to 1 so that the transformations are based only on the current batch of data. Furthermore, you need to ensure that it does not maintain running statistics (e.g., by setting running_mean=0 and running_var=1) at every forward pass involving a batch norm layer 
+
+
+## Some concluding words
+
+MAML is a surprisingly simple, yet effective and general approach to meta-learning. It can be applied to both supervised and reinforcement learning problems. For a long time, people thought that MAML learned to learn quickly. However, recent work has shown that MAML actually learns robust features that can be re-used for various tasks. This has launched new works that attempt to design meta-learning algorithms that actually learn fast. 
+
+Hope to see you in my next blog!
 
 
 
