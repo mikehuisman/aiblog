@@ -35,5 +35,5 @@ In order to properly understand MAML, it is crucial to understand what tasks are
 
 ## Formalizing MAML
 
-<img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> 
+<img src="https://latex.codecogs.com/gif.latex?\mathcal{T}_j=\text { Onset event at time bin } t " /> 
 
