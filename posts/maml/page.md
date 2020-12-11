@@ -40,7 +40,7 @@ Also note that neural network optimization landscapes are not bowl-shaped. Thus,
 
 
 ## Tasks 
-In order to properly understand MAML, it is crucial to understand what tasks are and how they are composed. MAML was developed for the setting where tasks consist of two parts: a *support set* and a *query set*. Using this setup, our network can learn new tasks by making some updates on the support set. The success of this learning process can then be measured in the query set. Note that the support and query sets correspond to regular train and test sets of examples (in our case). For more information on the tasks, please refer to our [previous blog post](https://mikehuisman.github.io/aiblog/posts/intro-metalearning/page.html).
+In order to properly understand MAML, it is crucial to understand what tasks are and how they are composed. MAML is very general in the sense that it works on both reinforcement learning and supervised learning tasks. In this blog, we limit ourselves to the supervised case for simplicity. This means that tasks consist of two parts: a *support set* and a *query set*. Using this setup, our network can learn new tasks by making some updates on the support set. The success of this learning process can then be measured in the query set. Note that the support and query sets correspond to regular train and test sets of examples (in our case). For more information on the tasks, please refer to our [previous blog post](https://mikehuisman.github.io/aiblog/posts/intro-metalearning/page.html).
 
 ## Formalizing MAML
 
