@@ -76,7 +76,7 @@ Suppose we have some distribution of tasks $p(\mathcal{T})$ which assigns a prob
 
 
 Or in words, the initialization from which we can quickly learn various tasks. 
-See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and attempt to learn the associated concepts. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn such tasks more quickly. The only difference with evolution is that the individuals (neural networks for each task) share the same initialization! 
+See the analogy with the double-loop learning process in nature? At the inner-level, we are presented with a task $\mathcal{T}_j$ and attempt to learn the associated concepts. At the outer-level, we wish to find a better initialization $\theta$ from which we can learn such tasks more quickly. 
 
 Now as you have already seen in the above image (computation graph), we have to propagate backwards through all updates that we have made on individual tasks. This means that we have to compute the gradient of gradients, which requires the computation of second-order derivatives. This can be very expensive in terms of running time and memory cost. Fortunately, [Finn et al. (2017)](https://arxiv.org/pdf/1703.03400.pdf) have shown that a first-order approximation of MAML works just as well! 
 
